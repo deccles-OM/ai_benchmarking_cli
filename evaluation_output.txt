@@ -1,0 +1,543 @@
+[OK] Loaded 27 task files from ford_data_analyst_benchmark\tasks
+[OK] Loaded 145 responses from gemini-3.1-pro-preview_20260318_task_groups.json
+
+====================================================================================================
+EVALUATING RESPONSES
+====================================================================================================
+
+[OK] Task 1/145: task_group1_basic [Data Understanding] BASIC_01
+   Score: 84.00% (Accuracy: 100.00%, Reasoning: 50.00%)
+   Question: Which vehicle model sold the most units in the US in 2024? [Answer: model name o...
+   Response: Fiesta
+
+[OK] Task 2/145: task_group1_basic [Data Understanding] BASIC_02
+   Score: 95.00% (Accuracy: 100.00%, Reasoning: 50.00%)
+   Question: How many total units did the Escape model sell across all regions in 2024? [Answ...
+   Response: 763992
+
+[OK] Task 3/145: task_group1_basic [Data Understanding] BASIC_03
+   Score: 84.00% (Accuracy: 100.00%, Reasoning: 50.00%)
+   Question: Which region had the highest sales for the F150? [Answer: region name only, no q...
+   Response: AU
+
+[OK] Task 4/145: task_group1_basic [Data Understanding] BASIC_04
+   Score: 95.00% (Accuracy: 100.00%, Reasoning: 50.00%)
+   Question: How many unique dealers are listed in the dealer_claims dataset? [Answer: provid...
+   Response: 50
+
+[OK] Task 5/145: task_group1_basic [Data Understanding] BASIC_05
+   Score: 95.00% (Accuracy: 100.00%, Reasoning: 50.00%)
+   Question: How many warranty claims are in the dataset? [Answer: provide the count only, no...
+   Response: 1128
+
+[WARN] Task 6/145: task_group2_cleaning [Data Cleaning] CLEAN_01
+   Score: 49.00% (Accuracy: 0.00%, Reasoning: 60.00%)
+   Question: Identify two data quality issues in the warranty_claims dataset....
+   Response: 1. Missing values (`NA`) in the `mileage` column.
+2. Negative values in the `repair_cost` column.
+
+[OK] Task 7/145: task_group2_cleaning [Data Cleaning] CLEAN_02
+   Score: 95.00% (Accuracy: 100.00%, Reasoning: 50.00%)
+   Question: Which model appears to have the most data quality issues?...
+   Response: Focus
+
+[WARN] Task 8/145: task_group2_cleaning [Data Cleaning] CLEAN_03
+   Score: 59.93% (Accuracy: 7.32%, Reasoning: 100.00%)
+   Question: Are there any obvious data inconsistencies in the sales_data? Explain....
+   Response: There are no structural data errors (such as missing values, nulls, negative sales, or invalid data 
+
+[WARN] Task 9/145: task_group2_cleaning [Data Cleaning] CLEAN_04
+   Score: 68.79% (Accuracy: 49.47%, Reasoning: 60.00%)
+   Question: How would you handle the missing mileage value in claim_id 3?...
+   Response: The mileage value for claim_id 3 is not missing (it is 90680), so no handling is required.
+
+[WARN] Task 10/145: task_group3_eda [Exploratory Data Analysis] EDA_01
+   Score: 53.82% (Accuracy: 24.56%, Reasoning: 50.00%)
+   Question: Which dealer has the highest number of warranty claims? [Answer: dealer name(s) ...
+   Response: D3, D4, D27
+
+[WARN] Task 11/145: task_group3_eda [Exploratory Data Analysis] EDA_02
+   Score: 61.91% (Accuracy: 12.29%, Reasoning: 100.00%)
+   Question: Identify any anomalies in the vehicle_telemetry data and suggest possible causes...
+   Response: Based on the provided dataset, there are two primary anomalies:
+
+1. **Random/Non-Monotonic Mileage R
+
+[OK] Task 12/145: task_group3_eda [Exploratory Data Analysis] EDA_03
+   Score: 70.89% (Accuracy: 34.73%, Reasoning: 100.00%)
+   Question: Which model appears most frequently in warranty claims, and what might this indi...
+   Response: F150; this could indicate that the F150 has a significantly higher sales volume (more vehicles on th
+
+[WARN] Task 13/145: task_group3_eda [Exploratory Data Analysis] EDA_04
+   Score: 46.76% (Accuracy: 6.90%, Reasoning: 50.00%)
+   Question: Compare regional sales distribution. Which region is strongest for Ford overall?...
+   Response: AU
+
+[WARN] Task 14/145: task_group3_eda [Exploratory Data Analysis] EDA_05
+   Score: 64.98% (Accuracy: 29.94%, Reasoning: 80.00%)
+   Question: Rank vehicle models by total sales across all regions. [Answer: provide ranked l...
+   Response: 1. Fiesta: 2,463,163
+2. Focus: 2,188,894
+3. Mustang: 2,179,611
+4. Bronco: 2,114,373
+5. EdgeSUV: 2,05
+
+[OK] Task 15/145: task_group4_statistics [Statistical Analysis] STAT_01
+   Score: 95.00% (Accuracy: 100.00%, Reasoning: 50.00%)
+   Question: What is the average repair cost across all warranty claims (excluding invalid en...
+   Response: 529.27
+
+[WARN] Task 16/145: task_group4_statistics [Statistical Analysis] STAT_02
+   Score: 49.00% (Accuracy: 0.00%, Reasoning: 60.00%)
+   Question: What is the median repair cost? How does it compare to the mean? [Answer: provid...
+   Response: - **Median repair cost:** ~516
+- **Mean repair cost:** ~496
+
+[WARN] Task 17/145: task_group4_statistics [Statistical Analysis] STAT_03
+   Score: 53.00% (Accuracy: 0.00%, Reasoning: 80.00%)
+   Question: What is the coefficient of variation in US sales across all models, and what doe...
+   Response: The coefficient of variation (CV) for US units sold is approximately **36.03% (0.36)** across the in
+
+[WARN] Task 18/145: task_group4_statistics [Statistical Analysis] STAT_04
+   Score: 67.16% (Accuracy: 35.39%, Reasoning: 80.00%)
+   Question: Is D14's warranty claims rate statistically unusual? Explain your reasoning....
+   Response: No, D14's warranty claims rate is not statistically unusual when accounting for the multiple dealers
+
+[OK] Task 19/145: task_group5_sql [SQL & Query Logic] SQL_01
+   Score: 93.00% (Accuracy: 100.00%, Reasoning: 80.00%)
+   Question: Write an SQL query to find total sales units per region....
+   Response: SELECT region, SUM(units_sold) AS total_units
+FROM sales_data
+GROUP BY region;
+
+[OK] Task 20/145: task_group5_sql [SQL & Query Logic] SQL_02
+   Score: 93.00% (Accuracy: 100.00%, Reasoning: 80.00%)
+   Question: Write an SQL query to find the average units sold per model across all regions....
+   Response: SELECT model, AVG(units_sold) AS avg_units_sold
+FROM sales_data
+GROUP BY model;
+
+[WARN] Task 21/145: task_group5_sql [SQL & Query Logic] SQL_03
+   Score: 62.40% (Accuracy: 56.00%, Reasoning: 60.00%)
+   Question: Write an SQL query to find the model with the highest average repair cost....
+   Response: SELECT model
+FROM warranty_claims
+GROUP BY model
+ORDER BY AVG(repair_cost) DESC
+LIMIT 1;
+
+[OK] Task 22/145: task_group5_sql [SQL & Query Logic] SQL_04
+   Score: 93.00% (Accuracy: 100.00%, Reasoning: 80.00%)
+   Question: Write an SQL query to find all sales records where units_sold exceed 100,000....
+   Response: SELECT * FROM sales_data WHERE units_sold > 100000;
+
+[WARN] Task 23/145: task_group6_business [Business Insight] BIZ_01
+   Score: 62.44% (Accuracy: 13.59%, Reasoning: 100.00%)
+   Question: Based on regional sales data, what strategic recommendations would you make for ...
+   Response: 1. **Focus on High-Yield Markets & Models:** Allocate more marketing and manufacturing resources to 
+
+[WARN] Task 24/145: task_group6_business [Business Insight] BIZ_02
+   Score: 46.33% (Accuracy: 5.83%, Reasoning: 50.00%)
+   Question: Which model requires immediate quality investigation and why?...
+   Response: **F150**
+
+[WARN] Task 25/145: task_group6_business [Business Insight] BIZ_03
+   Score: 47.74% (Accuracy: 9.35%, Reasoning: 50.00%)
+   Question: Dealer D14 has 110 monthly claims vs. average 26. What action should Ford take?...
+   Response: Audit
+
+[WARN] Task 26/145: task_group6_business [Business Insight] BIZ_04
+   Score: 67.49% (Accuracy: 26.23%, Reasoning: 100.00%)
+   Question: The engine temperature spike in the telemetry data could impact warranty costs. ...
+   Response: Engine temperature spikes indicate potential overheating, which can lead to severe and irreversible 
+
+[WARN] Task 27/145: task_group7_instruction_following [Instruction Following] INST_01
+   Score: 52.93% (Accuracy: 23.57%, Reasoning: 100.00%)
+   Question: First, analyze sales data to find the top model. Then, provide warranty claim di...
+   Response: -- Step 1: Analyze sales data to find the top model
+WITH TopModel AS (
+    SELECT model_id
+    FROM 
+
+[WARN] Task 28/145: task_group7_instruction_following [Instruction Following] INST_02
+   Score: 43.50% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Calculate average mileage for warranty claims in US region ONLY. Do not include ...
+   Response: I am unable to calculate the actual average mileage or provide a trend analysis because no dataset o
+
+[WARN] Task 29/145: task_group7_instruction_following [Instruction Following] INST_03
+   Score: 49.33% (Accuracy: 14.58%, Reasoning: 100.00%)
+   Question: Start with dealer claims data. Sort dealers by claims per month. THEN and ONLY T...
+   Response: import pandas as pd
+
+# 1. Start with dealer claims data and sort dealers by claims per month
+sorted_
+
+[WARN] Task 30/145: task_group7_instruction_following [Instruction Following] INST_04
+   Score: 41.38% (Accuracy: 5.94%, Reasoning: 100.00%)
+   Question: Review vehicle telemetry. Identify anomalies. FIRST report the anomalies found, ...
+   Response: *(Note: As no specific telemetry data was provided in your prompt, the following is an analysis base
+
+[WARN] Task 31/145: task_group7_instruction_following [Instruction Following] INST_05
+   Score: 45.47% (Accuracy: 4.92%, Reasoning: 100.00%)
+   Question: Generate business insights in this exact order: 1) Data observation 2) Market im...
+   Response: Here is a hypothetical business insight based on your requested structure, as no specific data was p
+
+[WARN] Task 32/145: task_group8_dataform [Dataform Development] DF_01
+   Score: 48.00% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Write a simple Dataform SQL file that creates a table from sales_data, adding a ...
+   Response: config {
+  type: "table"
+}
+
+SELECT
+  *,
+  CASE model
+    WHEN 'F150' THEN units_sold * 35000
+    WHE
+
+[WARN] Task 33/145: task_group8_dataform [Dataform Development] DF_02
+   Score: 52.50% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Create a Dataform materialized table that aggregates sales by region. Should inc...
+   Response: config {
+  type: "table"
+}
+
+SELECT
+  region,
+  SUM(units_sold) AS total_units,
+  SUM(units_sold) / C
+
+[WARN] Task 34/145: task_group8_dataform [Dataform Development] DF_03
+   Score: 43.50% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Write Dataform SQL with dependencies. First table: clean warranty claims (exclud...
+   Response: -- File: definitions/clean_warranty_claims.sqlx
+config {
+  type: "table",
+  name: "clean_warranty_cl
+
+[WARN] Task 35/145: task_group8_dataform [Dataform Development] DF_04
+   Score: 57.00% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Create a Dataform incremental table for warranty claims that only processes new ...
+   Response: config {
+  type: "incremental",
+  uniqueKey: ["claim_id"]
+}
+
+pre_operations {
+  -- Pre-operation dat
+
+[WARN] Task 36/145: task_group8_dataform [Dataform Development] DF_05
+   Score: 39.00% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Build a complete Dataform project with 3 tables: 1) Raw sales staging, 2) Cleane...
+   Response: -- ==========================================
+-- File: definitions/sources/declarations.sqlx
+-- ====
+
+[WARN] Task 37/145: task_group9_sql_dialect [SQL Dialect Specificity] SQLD_01
+   Score: 44.00% (Accuracy: 0.00%, Reasoning: 80.00%)
+   Question: Write a BigQuery-specific query to calculate the average repair_cost. Use BigQue...
+   Response: SELECT 
+  AVG(repair_cost) AS average_repair_cost
+FROM 
+  `your_project.your_dataset.your_table_name
+
+[OK] Task 38/145: task_group9_sql_dialect [SQL Dialect Specificity] SQLD_02
+   Score: 73.00% (Accuracy: 50.00%, Reasoning: 80.00%)
+   Question: Rewrite as MySQL: Get total sales per region and per model. MySQL uses different...
+   Response: -- If you are translating BigQuery's ROLLUP (i.e., GROUP BY ROLLUP(region, model))
+-- MySQL puts the
+
+[WARN] Task 39/145: task_group9_sql_dialect [SQL Dialect Specificity] SQLD_03
+   Score: 47.00% (Accuracy: 0.00%, Reasoning: 80.00%)
+   Question: In Dataform/BigQuery, you CANNOT use ANY_VALUE in aggregations. Rewrite this que...
+   Response: -- Option 1: Use MIN() or MAX() if you must use GROUP BY (Simplest aggregation replacement)
+SELECT 
+
+
+[WARN] Task 40/145: task_group9_sql_dialect [SQL Dialect Specificity] SQLD_04
+   Score: 61.50% (Accuracy: 21.25%, Reasoning: 80.00%)
+   Question: Write a PostgreSQL-specific recursive query. Do not use BigQuery window function...
+   Response: WITH RECURSIVE dealer_hierarchy AS (
+    -- Anchor member: Select the top-level dealers (those witho
+
+[OK] Task 41/145: task_group9_sql_dialect [SQL Dialect Specificity] SQLD_05
+   Score: 89.00% (Accuracy: 100.00%, Reasoning: 60.00%)
+   Question: Given: You're in Dataform/BigQuery. Rewrite this MySQL query to work with Datafo...
+   Response: SELECT 
+  model, 
+  COUNT(DISTINCT dealer_id) AS dealer_count 
+FROM ${ref("sales")} 
+WHERE region = 
+
+[OK] Task 42/145: task_group10_complex_sql [Complex SQL] SQLC_01
+   Score: 85.25% (Accuracy: 0.00%, Reasoning: 80.00%)
+   Question: Write a query using a CTE (Common Table Expression) to: 1) Filter warranty claim...
+   Response: WITH FilteredClaims AS (
+    SELECT 
+        model, 
+        COUNT(*) AS claim_count
+    FROM 
+     
+
+[OK] Task 43/145: task_group10_complex_sql [Complex SQL] SQLC_02
+   Score: 85.00% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Write a query with nested subqueries: Find regions where average sales per model...
+   Response: SELECT region, model
+FROM (
+    SELECT region, model, AVG(units_sold) AS avg_sales
+    FROM sales_da
+
+[OK] Task 44/145: task_group10_complex_sql [Complex SQL] SQLC_03
+   Score: 79.75% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Build a multi-level CTE query: 1) CTE1: Clean warranty data, 2) CTE2: Aggregate ...
+   Response: WITH Clean_Data AS (
+    -- CTE 1: Clean warranty data by filtering out missing mileage and negative
+
+[OK] Task 45/145: task_group10_complex_sql [Complex SQL] SQLC_04
+   Score: 85.00% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Write a recursive CTE that builds a time-series anomaly detection. Start with te...
+   Response: WITH RECURSIVE RankedData AS (
+    -- Step 1: Assign a chronological row number per vehicle to allow
+
+[OK] Task 46/145: task_group10_complex_sql [Complex SQL] SQLC_05
+   Score: 79.75% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Advanced: Combine multiple CTEs (5+) with window functions, JSON operations, and...
+   Response: WITH RawJSONExtraction AS (
+    -- CTE 1: Extract claim attributes from JSON and filter base valid r
+
+[WARN] Task 47/145: task_group11_prompt_efficiency [Prompt Efficiency] PEFF_01
+   Score: 64.64% (Accuracy: 19.10%, Reasoning: 100.00%)
+   Question: With one sentence: 'Find the top-selling model.' Does the AI provide the correct...
+   Response: No, an AI cannot provide the correct answer based solely on that one sentence because it completely 
+
+[WARN] Task 48/145: task_group11_prompt_efficiency [Prompt Efficiency] PEFF_02
+   Score: 45.25% (Accuracy: 3.12%, Reasoning: 50.00%)
+   Question: Brief prompt: 'Warranty issues.' Without further context, can the AI identify th...
+   Response: No
+
+[WARN] Task 49/145: task_group11_prompt_efficiency [Prompt Efficiency] PEFF_03
+   Score: 69.75% (Accuracy: 0.00%, Reasoning: 60.00%)
+   Question: One-liner: 'Strategic insight on regional performance.' Provide a complete busin...
+   Response: **Business Recommendation: Strategic Regional Performance Optimization**
+
+[OK] Task 50/145: task_group11_prompt_efficiency [Prompt Efficiency] PEFF_04
+   Score: 79.75% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Vague prompt: 'Anomalies?' Can the AI identify what you mean and provide results...
+   Response: No, without prior conversation context, the AI cannot identify exactly what you mean by the single w
+
+[OK] Task 51/145: task_group11_prompt_efficiency [Prompt Efficiency] PEFF_05
+   Score: 79.75% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Ultra-minimal: 'Query it.' Can the AI figure out you want a SQL query, identify ...
+   Response: No. Without prior context, an attached dataset, or a defined schema, the AI cannot identify what "it
+
+[WARN] Task 52/145: task_group12_document_reading [Document Reading & Extraction] DOCREAD_01
+   Score: 38.61% (Accuracy: 7.77%, Reasoning: 60.00%)
+   Question: Read the specification document. Extract the warranty policy for the F150 model....
+   Response: Here is the extracted warranty policy for the Ford F150 (2024-2026 Model Years):
+
+[WARN] Task 53/145: task_group12_document_reading [Document Reading & Extraction] DOCREAD_02
+   Score: 57.85% (Accuracy: 12.12%, Reasoning: 80.00%)
+   Question: From the business requirements doc: What is the primary objective of the quality...
+   Response: To reduce warranty claims by 25% within 18 months through data-driven quality improvements and root 
+
+[WARN] Task 54/145: task_group12_document_reading [Document Reading & Extraction] DOCREAD_03
+   Score: 49.47% (Accuracy: 14.94%, Reasoning: 100.00%)
+   Question: Extract all SQL requirements, database specifications, and naming conventions fr...
+   Response: Based on the provided technical specification document, here are the extracted SQL requirements, dat
+
+[WARN] Task 55/145: task_group12_document_reading [Document Reading & Extraction] DOCREAD_04
+   Score: 53.99% (Accuracy: 14.97%, Reasoning: 100.00%)
+   Question: From the data dictionary, find: What does 'repair_cost' field represent? What ar...
+   Response: - **Represents:** Total warranty repair cost in USD.
+- **Valid Values:** > 0 (must be positive). Any
+
+[WARN] Task 56/145: task_group12_document_reading [Document Reading & Extraction] DOCREAD_05
+   Score: 67.55% (Accuracy: 36.36%, Reasoning: 80.00%)
+   Question: Synthesize information from requirements doc: What are the 5 key analytical ques...
+   Response: The 5 key analytical questions the system must answer (under Objective 1) and their required data fi
+
+[WARN] Task 57/145: task_group13_website_dev [Website Development] WEB_01
+   Score: 69.50% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Create a simple HTML page displaying sales data in a table. Include CSS styling ...
+   Response: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content
+
+[OK] Task 58/145: task_group13_website_dev [Website Development] WEB_02
+   Score: 85.00% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Write JavaScript code to filter a table by region. Users should be able to selec...
+   Response: // Add an event listener to the region dropdown to detect changes
+document.getElementById('regionFil
+
+[OK] Task 59/145: task_group13_website_dev [Website Development] WEB_03
+   Score: 74.75% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Build a React component that displays warranty claims data with sorting and filt...
+   Response: import React, { useState, useMemo } from 'react';
+
+// Mock data for warranty claims
+const mockClaims
+
+[OK] Task 60/145: task_group13_website_dev [Website Development] WEB_04
+   Score: 80.00% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Create a dashboard layout with multiple data visualization sections (sales trend...
+   Response: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content
+
+[OK] Task 61/145: task_group13_website_dev [Website Development] WEB_05
+   Score: 79.75% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Build a full-stack mini dashboard: Backend API endpoint (Node.js/Python) that se...
+   Response: /* =========================================
+   BACKEND: server.js (Node.js + Express)
+   Setup: npm
+
+[WARN] Task 62/145: task_group14_pipeline_dev [Pipeline Development] PIPE_01
+   Score: 43.50% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Design a data pipeline: CSV ÔåÆ cleaning ÔåÆ aggregation ÔåÆ output. Write pseud...
+   Response: import pandas as pd
+
+def extract(file_path: str) -> pd.DataFrame:
+    """Stage 1: Extract data from 
+
+[WARN] Task 63/145: task_group14_pipeline_dev [Pipeline Development] PIPE_02
+   Score: 52.50% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Write Python code to load a CSV, clean missing values, and export to a new CSV. ...
+   Response: import pandas as pd
+
+def clean_and_export_csv(input_filepath, output_filepath):
+    """
+    Loads a 
+
+[WARN] Task 64/145: task_group14_pipeline_dev [Pipeline Development] PIPE_02
+   Score: 48.00% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Create a data validation pipeline: Load warranty claims ÔåÆ validate repair_cost...
+   Response: import pandas as pd
+
+# 1. Load warranty claims (using sample data for demonstration)
+# In practice: 
+
+[WARN] Task 65/145: task_group14_pipeline_dev [Pipeline Development] PIPE_04
+   Score: 43.50% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Build a multi-source ETL pipeline: Load sales + warranty data, join on model, ge...
+   Response: import pandas as pd
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from
+
+[WARN] Task 66/145: task_group14_pipeline_dev [Pipeline Development] PIPE_05
+   Score: 43.50% (Accuracy: 0.00%, Reasoning: 100.00%)
+   Question: Design an production-ready data pipeline with Airflow DAG structure: Data ingest...
+   Response: """
+Production-Ready Data Pipeline DAG
+----------------------------------
+This Airflow DAG orchestra
+
+[WARN] Task 67/145: task_group15_architecture [Architecture & Design] ARCH_01
+   Score: 43.82% (Accuracy: 0.81%, Reasoning: 100.00%)
+   Question: Sketch a simple data architecture: Data source ÔåÆ Storage ÔåÆ Processing ÔåÆ An...
+   Response: Here is a simple conceptual sketch of a data architecture pipeline with labels and common examples f
+
+[WARN] Task 68/145: task_group15_architecture [Architecture & Design] ARCH_02
+   Score: 47.65% (Accuracy: 10.38%, Reasoning: 100.00%)
+   Question: Design a scalable data warehouse for Ford sales data. Consider: volume, variety,...
+   Response: To build a scalable data warehouse for Ford sales data that effectively manages massive Volume, dive
+
+[WARN] Task 69/145: task_group15_architecture [Architecture & Design] ARCH_02
+   Score: 51.31% (Accuracy: 29.53%, Reasoning: 80.00%)
+   Question: Design real-time monitoring pipeline: Streaming telemetry ÔåÆ Anomaly detection ...
+   Response: A scalable real-time monitoring pipeline architecture utilizing **OpenTelemetry** and **Apache Kafka
+
+[WARN] Task 70/145: task_group15_architecture [Architecture & Design] ARCH_04
+   Score: 50.37% (Accuracy: 17.18%, Reasoning: 100.00%)
+   Question: Design an enterprise data ecosystem: Multiple sources, data lake, data warehouse...
+   Response: An enterprise data ecosystem is a multi-layered architecture where **Data Sources** (APIs, DBs, IoT)
+
+[WARN] Task 71/145: task_group16_debugging [Debugging & Troubleshooting] DEBUG_01
+   Score: 64.60% (Accuracy: 19.00%, Reasoning: 100.00%)
+   Question: Here's a broken SQL query: 'SELECT model FROM sales WHERE units_sold > 100000 GR...
+   Response: The query fails because the column `model` is in the `SELECT` clause, but the `GROUP BY` clause is g
+
+[WARN] Task 72/145: task_group16_debugging [Debugging & Troubleshooting] DEBUG_02
+   Score: 57.90% (Accuracy: 2.25%, Reasoning: 100.00%)
+   Question: Python code returns wrong results: df[df['repair_cost'] > 200] returns negative ...
+   Response: The `repair_cost` column's data type is currently a **string (or `object`)** rather than a numeric t
+
+[WARN] Task 73/145: task_group16_debugging [Debugging & Troubleshooting] DEBUG_03
+   Score: 65.63% (Accuracy: 21.58%, Reasoning: 100.00%)
+   Question: ETL pipeline hangs on large dataset. Original code works fine on small data. Ide...
+   Response: The pipeline is likely hanging due to resource exhaustion (Out of Memory/thrashing), database transa
+
+[WARN] Task 74/145: task_group16_debugging [Debugging & Troubleshooting] DEBUG_04
+   Score: 57.77% (Accuracy: 1.93%, Reasoning: 100.00%)
+   Question: Data quality issue: Aggregated results don't match raw data. Warranty claims tot...
+   Response: I would debug this systematically using a 6-step approach: 
+1) **Verify data freshness** to rule out
+
+[WARN] Task 75/145: task_group16_debugging [Debugging & Troubleshooting] DEBUG_05
+   Score: 57.17% (Accuracy: 20.43%, Reasoning: 60.00%)
+   Question: Complex bug: Model predictions are inconsistent. Same input sometimes gives diff...
+   Response: To resolve inconsistent model predictions for the same input, you must systematically eliminate non-
+
+[WARN] Task 76/145: task_group17_performance [Performance Optimization] PERF_01
+   Score: 49.00% (Accuracy: 0.00%, Reasoning: 60.00%)
+   Question: Optimize this query (slow scan on large table): SELECT * FROM warranty_claims WH...
+   Response: SELECT * FROM warranty_claims WHERE model = 'Escape';
+
+[WARN] Task 77/145: task_group17_performance [Performance Optimization] PERF_02
+   Score: 46.00% (Accuracy: 0.00%, Reasoning: 60.00%)
+   Question: This Python loop is slow on large dataframes. Vectorize it: for i in range(len(d...
+   Response: df['revenue'] = df['units'] * df['model'].map(price_map)
+
+[WARN] Task 78/145: task_group17_performance [Performance Optimization] PERF_03
+   Score: 45.77% (Accuracy: 4.42%, Reasoning: 50.00%)
+   Question: Huge join between sales (1M rows) and warranty (500K rows) is very slow. Propose...
+   Response: Indexing
+
+[WARN] Task 79/145: task_group17_performance [Performance Optimization] PERF_04
+   Score: 64.84% (Accuracy: 19.60%, Reasoning: 100.00%)
+   Question: Data pipeline times out processing 10GB dataset. What optimization techniques wo...
+   Response: To optimize a pipeline timing out on a 10GB dataset, you should implement chunking/streaming to proc
+
+[WARN] Task 80/145: task_group17_performance [Performance Optimization] PERF_05
+   Score: 61.62% (Accuracy: 11.55%, Reasoning: 100.00%)
+   Question: Design query optimization strategy for a data warehouse with billions of rows. I...
+   Response: A robust query optimization strategy for a billion-row data warehouse relies on three foundational p
+
+[WARN] Task 81/145: task_group18_code_review [Code Review & Issue Detection] CODREV_01
+   Score: 65.14% (Accuracy: 20.34%, Reasoning: 100.00%)
+   Question: Review this Python code: 'import numpy as np
+data = np.array([1,2,3])
+result = c...
+   Response: The function `calculate_mean` is not defined, which will cause a `NameError`. To fix this, you shoul
+
+[WARN] Task 82/145: task_group18_code_review [Code Review & Issue Detection] CODREV_02
+   Score: 61.03% (Accuracy: 10.07%, Reasoning: 100.00%)
+   Question: Identify issues in this SQL: 'SELECT * FROM sales WHERE date > 2024'. What could...
+   Response: Here are the main issues that could break this SQL query:
+
+1. **Data Type Mismatch (The primary brea
+
+[WARN] Task 83/145: task_group18_code_review [Code Review & Issue Detection] CODREV_03
+   Score: 59.49% (Accuracy: 6.23%, Reasoning: 100.00%)
+   Question: Review this API endpoint code. Identify missing error handling, validation, and ...
+   Response: ### 1. Security Issues
+* **Critical Logic Flaw / Data Leak:** The `.filter(id==id)` expression compa
+
+[WARN] Task 84/145: task_group18_code_review [Code Review & Issue Detection] CODREV_01
+   Score: 59.71% (Accuracy: 6.79%, Reasoning: 100.00%)
+   Question: This data pipeline is missing critical components. Identify all gaps: Load CSV Ô...
+Traceback (most recent call last):
+  File "C:\Users\DECCLES6\Documents\GitHub\OM_e-commerce\AI\evaluate_benchmark_results.py", line 604, in <module>
+    evaluate_responses(response_file)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\DECCLES6\Documents\GitHub\OM_e-commerce\AI\evaluate_benchmark_results.py", line 521, in evaluate_responses
+    print(f"   Response: {response_preview}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 29: character maps to <undefined>
