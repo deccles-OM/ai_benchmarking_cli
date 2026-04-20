@@ -31,9 +31,6 @@ Professional-grade AI evaluation framework with 235 tasks across 27 categories, 
 ├── 📁 response_models/ (Output directory: Benchmark results from Gemini runs)
 │   └── *.json (Saved responses with performance metrics and scores)
 │
-├── 📁 benchmarks/ (Legacy: Partial benchmark results)
-│   └── *.json (Historical evaluation data)
-│
 ├── .venv/ (Python virtual environment)
 ├── requirements.txt (Python dependencies)
 └── info.txt (Setup information)
