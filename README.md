@@ -1,4 +1,4 @@
-# Ford Data Analyst Super Benchmark (FDASB) v3.7
+# AI Benchmarking (CLI)
 
 Professional-grade AI evaluation framework with 235 tasks across 27 categories, including stress testing, cognitive skills, and advanced content generation. Includes Gemini API benchmarking tools for testing Google's LLMs against real-world Ford data analyst scenarios.
 
@@ -7,33 +7,40 @@ Professional-grade AI evaluation framework with 235 tasks across 27 categories, 
 ## Contents of This Workspace
 
 ```
-📦 OM_e-commerce/AI/
-├── 📄 README.md (this file)
-├── 🐍 Python Scripts:
-│   ├── gemini_benchmark.py (Main: Interactive Gemini benchmarking with performance metrics)
-│   ├── gemini_client.py (Utility: Google Gemini client initialization)
-│   ├── evaluate_benchmark_results.py (Evaluation: Scores Gemini responses using BenchmarkScorer)
-│   ├── gemini_test.py (Testing: Quick API connection test)
-│   ├── run_single_model_call.py (Testing: Single API call verification)
-│   ├── ai_test_connection.py (Testing: API authentication test)
-│   ├── bench_gui.py (GUI: Benchmark interface)
-│   ├── compute_sales_winner*.py (Analysis: Sales data processing)
-│   └── evaluate_model_sql_vs_csv.py (Testing: SQL vs CSV model comparison)
+📦 ai_benchmarking_cli/
+├── README.md (this file)
+├── requirements.txt (Python dependencies)
+├── .venv/ (Python virtual environment)
+├── __pycache__/ (Python cache)
+├── ast_code_comparator.py
+├── check_sql_scores.py
+├── evaluate_benchmark_results.py
+├── gemini_benchmark.py
+├── gemini_client.py
+├── generate_answer_comparison.py
+├── semantic_sql_comparator.py
+├── STANDARDIZATION_COMPLETE.md
+├── evaluation_output.txt
 │
-├── 📁 ford_data_analyst_benchmark/ (Core benchmark structure)
+├── ford_data_analyst_benchmark/ (Core benchmark structure)
+│   ├── STANDARD_SCHEMA.py
+│   ├── standardize_tasks.py
 │   ├── tasks/ (27 task group files with 235 total questions)
 │   ├── datasets/ (4 CSV files with Ford data)
 │   ├── documents/ (5 specification documents for document reading tasks)
-│   ├── answers/ (Scoring metadata and example responses)
 │   ├── evaluation/ (scorer.py - the scoring engine)
-│   └── README.md (FDASB detailed documentation)
+│   ├── scoring/
+│   │   ├── answer_key.json
+│   │   ├── gpt4_1_partial.json
+│   │   └── run_benchmark.py
+│   ├── tasks_backup/ (Backup of task group files)
+│   └── __pycache__/
 │
-├── 📁 response_models/ (Output directory: Benchmark results from Gemini runs)
-│   └── *.json (Saved responses with performance metrics and scores)
-│
-├── .venv/ (Python virtual environment)
-├── requirements.txt (Python dependencies)
-└── info.txt (Setup information)
+├── response_models/ (Output directory: Benchmark results from Gemini runs)
+│   ├── gemini-3.1-pro-preview_20260318_task_groups_answer_comparison.csv
+│   ├── gemini-3.1-pro-preview_20260318_task_groups_evaluation.json
+│   ├── gemini-3.1-pro-preview_20260318_task_groups_RESULTS.md
+│   └── gemini-3.1-pro-preview_20260318_task_groups.json
 ```
 
 ## Quick Start
