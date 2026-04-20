@@ -1,0 +1,73 @@
+[
+  {
+    "task_id": "SQLC_01",
+    "category": "Complex SQL",
+    "difficulty": "medium",
+    "question": "Write a query using a CTE (Common Table Expression) to: 1) Filter warranty claims with repair_cost > 300, 2) Count claims per model, 3) Rank models by claim count.",
+    "dataset": "warranty_claims.csv",
+    "required_syntax": [
+      "WITH",
+      "CTE",
+      "RANK() OVER"
+    ],
+    "answer_type": "code",
+    "points": 30
+  },
+  {
+    "task_id": "SQLC_02",
+    "category": "Complex SQL",
+    "difficulty": "medium",
+    "question": "Write a query with nested subqueries: Find regions where average sales per model exceed the global average. Show region and model.",
+    "dataset": "sales_data.csv",
+    "required_syntax": [
+      "subqueries",
+      "GROUP BY",
+      "HAVING"
+    ],
+    "answer_type": "code",
+    "points": 30
+  },
+  {
+    "task_id": "SQLC_03",
+    "category": "Complex SQL",
+    "difficulty": "hard",
+    "question": "Build a multi-level CTE query: 1) CTE1: Clean warranty data, 2) CTE2: Aggregate by model, 3) CTE3: Calculate percentiles, 4) Final: Highlight outliers.",
+    "dataset": "warranty_claims.csv",
+    "required_syntax": [
+      "MULTIPLE CTEs",
+      "PERCENTILE_CONT",
+      "JOIN"
+    ],
+    "answer_type": "code",
+    "points": 35
+  },
+  {
+    "task_id": "SQLC_04",
+    "category": "Complex SQL",
+    "difficulty": "hard",
+    "question": "Write a recursive CTE that builds a time-series anomaly detection. Start with telemetry data, calculate moving average, identify deviations > 2 standard deviations.",
+    "dataset": "vehicle_telemetry.csv",
+    "required_syntax": [
+      "RECURSIVE CTE",
+      "window functions",
+      "standard deviation"
+    ],
+    "answer_type": "code",
+    "points": 40
+  },
+  {
+    "task_id": "SQLC_05",
+    "category": "Complex SQL",
+    "difficulty": "very_hard",
+    "question": "Advanced: Combine multiple CTEs (5+) with window functions, JSON operations, and dynamic filtering. Query should find dealers with quality trends (improving or declining claims). Include month-over-month change.",
+    "dataset": "dealer_claims.csv + synthetic time data",
+    "required_syntax": [
+      "5+ CTEs",
+      "WINDOW functions",
+      "LAG/LEAD",
+      "complex JOINs"
+    ],
+    "answer_type": "code",
+    "points": 45
+  }
+]

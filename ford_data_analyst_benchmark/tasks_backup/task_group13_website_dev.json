@@ -1,0 +1,70 @@
+[
+  {
+    "task_id": "WEB_01",
+    "category": "Website Development",
+    "difficulty": "easy",
+    "question": "Create a simple HTML page displaying sales data in a table. Include CSS styling for readability.",
+    "requirements": [
+      "HTML table",
+      "CSS styling",
+      "header",
+      "responsive layout"
+    ],
+    "answer_type": "code",
+    "points": 20
+  },
+  {
+    "task_id": "WEB_02",
+    "category": "Website Development",
+    "difficulty": "easy",
+    "question": "Write JavaScript code to filter a table by region. Users should be able to select a region from a dropdown.",
+    "requirements": [
+      "JavaScript function",
+      "DOM manipulation",
+      "event listener"
+    ],
+    "answer_type": "code",
+    "points": 20
+  },
+  {
+    "task_id": "WEB_03",
+    "category": "Website Development",
+    "difficulty": "medium",
+    "question": "Build a React component that displays warranty claims data with sorting and filtering capabilities.",
+    "requirements": [
+      "React component",
+      "useState",
+      "event handlers",
+      "data mapping"
+    ],
+    "answer_type": "code",
+    "points": 25
+  },
+  {
+    "task_id": "WEB_04",
+    "category": "Website Development",
+    "difficulty": "medium",
+    "question": "Create a dashboard layout with multiple data visualization sections (sales trends, warranty distribution). Using HTML/CSS/JS, make it interactive.",
+    "requirements": [
+      "layout structure",
+      "charts/graphs",
+      "interactivity"
+    ],
+    "answer_type": "code",
+    "points": 25
+  },
+  {
+    "task_id": "WEB_05",
+    "category": "Website Development",
+    "difficulty": "hard",
+    "question": "Build a full-stack mini dashboard: Backend API endpoint (Node.js/Python) that serves warranty data, Frontend React component that visualizes it with filters.",
+    "requirements": [
+      "API endpoint",
+      "Frontend component",
+      "data fetching",
+      "error handling"
+    ],
+    "answer_type": "code",
+    "points": 30
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "task_id": "SQL_01",
+    "category": "SQL & Query Logic",
+    "dataset": "sales_data.csv",
+    "question": "Write an SQL query to find total sales units per region.",
+    "answer_type": "text",
+    "correct_answer": "SELECT region, SUM(units_sold) FROM sales GROUP BY region;",
+    "points": 20
+  },
+  {
+    "task_id": "SQL_02",
+    "category": "SQL & Query Logic",
+    "dataset": "sales_data.csv",
+    "question": "Write an SQL query to find the average units sold per model across all regions.",
+    "answer_type": "text",
+    "correct_answer": "SELECT model, AVG(units_sold) FROM sales GROUP BY model;",
+    "points": 20
+  },
+  {
+    "task_id": "SQL_03",
+    "category": "SQL & Query Logic",
+    "dataset": "warranty_claims.csv",
+    "question": "Write an SQL query to find the model with the highest average repair cost.",
+    "answer_type": "text",
+    "correct_answer": "SELECT model, AVG(repair_cost) FROM warranties WHERE repair_cost > 0 GROUP BY model ORDER BY AVG(repair_cost) DESC LIMIT 1;",
+    "points": 20
+  },
+  {
+    "task_id": "SQL_04",
+    "category": "SQL & Query Logic",
+    "dataset": "sales_data.csv",
+    "question": "Write an SQL query to find all sales records where units_sold exceed 100,000.",
+    "answer_type": "text",
+    "correct_answer": "SELECT * FROM sales WHERE units_sold > 100000;",
+    "points": 20
+  }
+]

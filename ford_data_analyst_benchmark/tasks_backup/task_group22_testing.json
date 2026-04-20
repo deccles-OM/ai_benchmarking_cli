@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "TEST_01",
+    "category": "Testing & Quality Assurance",
+    "difficulty": "easy",
+    "question": "Write unit tests for function: 'def add(a, b): return a + b'. Cover all cases.",
+    "answer_type": "code",
+    "expected_answer": "Tests for positive, negative, zero, float, None, type errors",
+    "points": 20,
+    "correct_answer": "Pyramid: 70% unit tests (fast, isolated), 20% integration tests (component interaction), 10% E2E tests (full workflow). Tools: pytest, unittest (Python), mock for dependencies."
+  },
+  {
+    "task_id": "TEST_02",
+    "category": "Testing & Quality Assurance",
+    "difficulty": "easy",
+    "question": "Design integration test for: Load CSV \u00e2\u2020\u2019 Transform \u00e2\u2020\u2019 Save. What to test?",
+    "answer_type": "text",
+    "expected_answer": "File existence, format validation, data integrity, error handling, performance, cleanup",
+    "points": 20,
+    "correct_answer": "Unit test structure: Arrange (setup), Act (call function), Assert (check result), Cleanup (teardown). Name: test_<function>_<scenario>. Cover: happy path, edge cases, errors."
+  },
+  {
+    "task_id": "TEST_03",
+    "category": "Testing & Quality Assurance",
+    "difficulty": "medium",
+    "question": "Create test strategy for data pipeline with CI/CD. Include unit, integration, end-to-end testing.",
+    "answer_type": "text",
+    "expected_answer": "Automated tests at each layer, mocking external dependencies, fixtures, performance benchmarks, coverage goals",
+    "points": 25,
+    "correct_answer": "Coverage target: 80%+ lines. Tools: coverage.py. But focus on critical paths, not just percentage. Untested exception handlers more valuable than untested comments."
+  },
+  {
+    "task_id": "TEST_04",
+    "category": "Testing & Quality Assurance",
+    "difficulty": "medium",
+    "question": "How would you test this complex SQL query? What edge cases?",
+    "answer_type": "text",
+    "expected_answer": "NULL handling, empty results, large datasets, duplicates, boundary conditions, join correctness",
+    "points": 25,
+    "correct_answer": "Integration tests: Use test database, fixtures for sample data, verify workflows (query \u2192 transform \u2192 load). Async tests with proper awaits. Database rollback per test."
+  },
+  {
+    "task_id": "TEST_05",
+    "category": "Testing & Quality Assurance",
+    "difficulty": "hard",
+    "question": "Design comprehensive test suite: unit tests, integration tests, performance tests, data validation. Show structure.",
+    "answer_type": "code",
+    "expected_answer": "Test pyramid, fixtures, mocking strategy, coverage requirements, CI/CD integration",
+    "points": 30,
+    "correct_answer": "CI/CD integration: Run tests on every commit, report results, block merge if failures. Setup: GitHub Actions, Jenkins, GitLab CI. Parallelization for speed."
+  }
+]

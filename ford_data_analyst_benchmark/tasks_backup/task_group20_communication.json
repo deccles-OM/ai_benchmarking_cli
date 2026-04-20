@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "COMM_01",
+    "category": "Communication & Documentation",
+    "difficulty": "easy",
+    "question": "This function has no docstring or comments. Write proper documentation: 'def calc(x, y): return x * y + x / y'",
+    "answer_type": "code",
+    "expected_answer": "Function with docstring explaining parameters, return, and purpose",
+    "points": 20,
+    "correct_answer": "Status update: 'Completed data validation (200 records verified). Fixed 3 data quality issues. Ready for analyst review by EOD.' Specific, quantified, timeline."
+  },
+  {
+    "task_id": "COMM_02",
+    "category": "Communication & Documentation",
+    "difficulty": "easy",
+    "question": "Review this code comment: '# do stuff'. How would you improve it?",
+    "answer_type": "text",
+    "expected_answer": "Replace with meaningful comment explaining WHY, not WHAT. Include context, assumptions, edge cases",
+    "points": 20,
+    "correct_answer": "Complex topic: Start with high-level (1-2 sentences), then details. Example: 'Sales variance traced to regional inventory. Q2 Asia had 40% lower supply due to shipment delays. Impact: 15% revenue miss.'"
+  },
+  {
+    "task_id": "COMM_03",
+    "category": "Communication & Documentation",
+    "difficulty": "medium",
+    "question": "Create API documentation for an endpoint. Include endpoint, params, response format, error codes, examples",
+    "answer_type": "code",
+    "expected_answer": "Proper API spec with request/response schemas, status codes, authentication, rate limiting info",
+    "points": 25,
+    "correct_answer": "Technical explanation: Use analogies. 'Database indexing works like book table of contents\u2014find section directly instead of reading every page.' Then explain actual technical benefit."
+  },
+  {
+    "task_id": "COMM_04",
+    "category": "Communication & Documentation",
+    "difficulty": "medium",
+    "question": "Document a complex SQL query with CTEs. Explain what each CTE does and final output.",
+    "answer_type": "text",
+    "expected_answer": "Detailed comments for each CTE, explanation of joins, business logic, expected output format",
+    "points": 25,
+    "correct_answer": "Bad news delivery: Lead with impact, explain root cause, offer solution. 'Warranty claims up 12% (higher than expected). Vehicles from batch 2024-02 affected. Implementing sensor replacement program.'"
+  },
+  {
+    "task_id": "COMM_05",
+    "category": "Communication & Documentation",
+    "difficulty": "hard",
+    "question": "Write complete Project README including: setup, usage, architecture, troubleshooting, contributing guidelines",
+    "answer_type": "text",
+    "expected_answer": "Comprehensive README with all standard sections, examples, prerequisites, common issues",
+    "points": 30,
+    "correct_answer": "Documentation: For analysts\u2014explain business context & limitations. For developers\u2014code examples & error cases. For leaders\u2014ROI & timelines. Audience-appropriate depth & terminology."
+  }
+]

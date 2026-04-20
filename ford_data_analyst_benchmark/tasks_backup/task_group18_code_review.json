@@ -1,0 +1,47 @@
+[
+  {
+    "task_id": "CODREV_01",
+    "category": "Code Review & Issue Detection",
+    "difficulty": "easy",
+    "question": "Review this Python code: 'import numpy as np\ndata = np.array([1,2,3])\nresult = calculate_mean(data)'. What's wrong?",
+    "answer_type": "text",
+    "expected_answer": "Missing function definition or import for calculate_mean",
+    "points": 20
+  },
+  {
+    "task_id": "CODREV_02",
+    "category": "Code Review & Issue Detection",
+    "difficulty": "easy",
+    "question": "Identify issues in this SQL: 'SELECT * FROM sales WHERE date > 2024'. What could break this?",
+    "answer_type": "text",
+    "expected_answer": "Missing quotes around date string, potential NULL handling issues, missing year format specification",
+    "points": 20
+  },
+  {
+    "task_id": "CODREV_03",
+    "category": "Code Review & Issue Detection",
+    "difficulty": "medium",
+    "question": "Review this API endpoint code. Identify missing error handling, validation, and security issues: 'def get_user(id): return db.query(User).filter(id==id).first()'",
+    "answer_type": "text",
+    "expected_answer": "No input validation, SQL injection risk, no error handling for not found, no authentication, no logging",
+    "points": 25
+  },
+  {
+    "task_id": "CODREV_04",
+    "category": "Code Review & Issue Detection",
+    "difficulty": "medium",
+    "question": "This data pipeline is missing critical components. Identify all gaps: Load CSV \u00e2\u2020\u2019 Transform \u00e2\u2020\u2019 Export. What's missing?",
+    "answer_type": "text",
+    "expected_answer": "Data validation, error handling, logging, monitoring, retry logic, schema validation, notification on failure, backup/recovery",
+    "points": 25
+  },
+  {
+    "task_id": "CODREV_05",
+    "category": "Code Review & Issue Detection",
+    "difficulty": "hard",
+    "question": "Complete code review: Find 5+ issues in this production code: 'def process_data(): data = read_file(\"data.csv\"); result = transform(data); write_file(result, \"output.csv\"); return result'",
+    "answer_type": "text",
+    "expected_answer": "No error handling, no logging, no data validation, hardcoded paths, no type hints, no documentation, race conditions possible, no rollback mechanism",
+    "points": 30
+  }
+]
